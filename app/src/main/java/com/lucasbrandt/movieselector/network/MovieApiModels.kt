@@ -1,0 +1,5 @@
+package com.lucasbrandt.movieselector.network
+
+class MovieDataResponse(val results: List<MovieDataModel>)
+
+class MovieDataModel(val title: String, val overview: String, val release_date: String, val vote_count: String)
