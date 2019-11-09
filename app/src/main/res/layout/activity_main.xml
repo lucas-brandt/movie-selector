@@ -6,22 +6,59 @@
 
         <variable
                 name="viewModel"
-                type="com.lucasbrandt.movieselector.MainActivityViewModel" />
+                type="com.lucasbrandt.movieselector.MainActivityViewModel"/>
+
     </data>
 
     <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <TextView
+
+        <com.lukedeighton.wheelview.WheelView
+                android:id="@+id/wheelView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hello World"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="50dp"
+                app:wheelColor="@color/colorPrimary"
+                app:rotatableWheelDrawable="false"
+                app:selectionAngle="90.0"
+                app:repeatItems="true"
+                app:wheelRadius="200dp"
+                app:wheelItemCount="10"
+                app:wheelPadding="13dp"
+                app:wheelItemRadius="43dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text=""/>
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+                android:id="@+id/movieTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@{viewModel.movieTitle}"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/wheelView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="Movie Title"/>
+
+        <TextView
+                android:id="@+id/movieDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{viewModel.movieDescription}"
+                app:layout_constraintTop_toBottomOf="@id/movieTitle"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:text="Movie Description"/>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

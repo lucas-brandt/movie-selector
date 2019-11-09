@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivityViewModelTest {
 
-    val subject: MainActivityViewModel = MainActivityViewModel()
-    var mockWebServer = MockWebServer()
+    private val subject: MainActivityViewModel = MainActivityViewModel()
+    private var mockWebServer = MockWebServer()
 
     @Before
     fun setup() {
@@ -38,6 +38,7 @@ class MainActivityViewModelTest {
         val movieService = retrofit.create(MovieService::class.java)
         val call = movieService.getCurrentlyPlayingMovies("123")
         val callResult = call.execute()
+
         assertTrue(callResult.isSuccessful)
         assertEquals("Joker", callResult.body()?.results?.get(0)?.title)
     }
@@ -54,8 +55,17 @@ class MainActivityViewModelTest {
         val movieService = retrofit.create(MovieService::class.java)
         val call = movieService.getCurrentlyPlayingMovies("123")
         val callResult = call.execute()
+
         assertFalse(callResult.isSuccessful)
         assertEquals(null, callResult.body()?.results?.get(0)?.title)
+    }
+
+    @Test
+    fun setMovieDetails_updatesObservableFields() {
+        subject.setMovieDetails("title", "desc")
+
+        assertEquals(subject.movieTitle.get(), "title")
+        assertEquals(subject.movieDescription.get(), "desc")
     }
 
     fun buildRetrofit(): Retrofit {
