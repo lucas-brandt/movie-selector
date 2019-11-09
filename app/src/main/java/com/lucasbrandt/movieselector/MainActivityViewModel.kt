@@ -21,7 +21,7 @@ class MainActivityViewModel : ViewModel() {
         getMovieData()
     }
 
-    fun getMovieData() {
+    private fun getMovieData() {
         val call = movieService.getCurrentlyPlayingMovies(API_KEY)
         val movieList = ArrayList<MovieDataModel>(10)
         call.enqueue(object : Callback<MovieDataResponse> {

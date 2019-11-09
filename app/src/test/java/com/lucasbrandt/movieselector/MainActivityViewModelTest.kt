@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivityViewModelTest {
 
-    val subject: MainActivityViewModel = MainActivityViewModel()
-    var mockWebServer = MockWebServer()
+    private val subject: MainActivityViewModel = MainActivityViewModel()
+    private var mockWebServer = MockWebServer()
 
     @Before
     fun setup() {
