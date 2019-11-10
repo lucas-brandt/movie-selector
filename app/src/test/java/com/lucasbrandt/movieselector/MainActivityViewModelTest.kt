@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivityViewModelTest {
 
+    //This is the primary subject of tests, therefore named "subject"
     private val subject: MainActivityViewModel = MainActivityViewModel()
     private var mockWebServer = MockWebServer()
 
