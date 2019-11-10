@@ -32,8 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.wheelView.setOnWheelItemClickListener { parent, position, isSelected ->
             val selectedEntry = (parent.adapter as MovieAdapter).getItem(position)
-            val gson = Gson()
-            val movieDataModelJson = gson.toJson(selectedEntry)
+            val movieDataModelJson = Gson().toJson(selectedEntry)
             val intent = Intent(baseContext, MovieInfoActivity::class.java)
             intent.putExtra("MOVIE_INFORMATION", movieDataModelJson)
             startActivity(intent)

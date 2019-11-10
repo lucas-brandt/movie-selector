@@ -18,8 +18,7 @@ class MovieInfoActivity : AppCompatActivity() {
         val movieInfoViewModel = ViewModelProviders.of(this).get(MovieInfoViewModel::class.java)
         binding.viewModel = movieInfoViewModel
 
-        val gson = Gson()
-        val movieInformation = gson.fromJson<MovieDataModel>(intent.getStringExtra("MOVIE_INFORMATION"), MovieDataModel::class.java)
+        val movieInformation = Gson().fromJson<MovieDataModel>(intent.getStringExtra("MOVIE_INFORMATION"), MovieDataModel::class.java)
         movieInfoViewModel.setMovieInformation(movieInformation)
     }
 }
