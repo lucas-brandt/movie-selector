@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivityViewModelTest {
 
+    //This is the primary subject of tests, therefore named "subject"
     private val subject: MainActivityViewModel = MainActivityViewModel()
     private var mockWebServer = MockWebServer()
 
@@ -31,7 +32,7 @@ class MainActivityViewModelTest {
         val retrofit = buildRetrofit()
 
         mockWebServer.enqueue(
-            MockResponse().setBody("{\"results\":[{\"popularity\":457.734,\"vote_count\":4850,\"video\":false,\"poster_path\":\"/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg\",\"id\":475557,\"adult\":false,\"backdrop_path\":\"/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg\",\"original_language\":\"en\",\"original_title\":\"Joker\",\"genre_ids\":[80,18,53],\"title\":\"Joker\",\"vote_average\":8.5,\"overview\":\"During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.\",\"release_date\":\"2019-10-04\"}],\"page\":1,\"total_results\":1387,\"dates\":{\"maximum\":\"2019-11-12\",\"minimum\":\"2019-09-25\"},\"total_pages\":70}")
+            MockResponse().setBody("{\"results\":[{\"popularity\":457.734,\"vote_average\":4850,\"video\":false,\"poster_path\":\"/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg\",\"id\":475557,\"adult\":false,\"backdrop_path\":\"/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg\",\"original_language\":\"en\",\"original_title\":\"Joker\",\"genre_ids\":[80,18,53],\"title\":\"Joker\",\"vote_average\":8.5,\"overview\":\"During the 1980s, a failed stand-up comedian is driven insane and turns to a life of crime and chaos in Gotham City while becoming an infamous psychopathic crime figure.\",\"release_date\":\"2019-10-04\"}],\"page\":1,\"total_results\":1387,\"dates\":{\"maximum\":\"2019-11-12\",\"minimum\":\"2019-09-25\"},\"total_pages\":70}")
                 .setResponseCode(200)
         )
 
