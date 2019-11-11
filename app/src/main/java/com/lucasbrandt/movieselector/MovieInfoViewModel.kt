@@ -17,11 +17,10 @@ class MovieInfoViewModel : ViewModel() {
 
     lateinit var bindableFieldTarget: BindableFieldTarget
 
-
     fun setMovieInformation(movieInformation: MovieDataModel?) {
         movieTitle.set(movieInformation?.title)
         movieDescription.set(movieInformation?.overview)
-        movieRating.set(movieInformation?.vote_average + "/10")
+        movieRating.set(movieInformation?.vote_average + MOVIE_RATING_APPEND)
         movieReleaseDate.set(movieInformation?.release_date)
     }
 
