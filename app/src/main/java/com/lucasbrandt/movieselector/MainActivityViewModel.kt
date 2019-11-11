@@ -2,11 +2,11 @@ package com.lucasbrandt.movieselector
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
+import android.content.Context
 import android.databinding.ObservableField
-import com.lucasbrandt.movieselector.network.MovieDataModel
-import com.lucasbrandt.movieselector.network.MovieDataResponse
-import com.lucasbrandt.movieselector.network.MovieService
-import com.lucasbrandt.movieselector.network.RetrofitBuilder
+import android.graphics.drawable.Drawable
+import com.lucasbrandt.movieselector.network.*
+import com.squareup.picasso.Picasso
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -16,6 +16,9 @@ class MainActivityViewModel : ViewModel() {
     val movieLiveList: MutableLiveData<ArrayList<MovieDataModel>> = MutableLiveData()
     val movieTitle: ObservableField<String> = ObservableField("")
     val movieDescription: ObservableField<String> = ObservableField("")
+    val movieBackdrop: ObservableField<Drawable> = ObservableField()
+
+    lateinit var bindableFieldTarget: BindableFieldTarget
 
     init {
         getMovieData()
@@ -37,8 +40,16 @@ class MainActivityViewModel : ViewModel() {
         })
     }
 
-    fun setMovieDetails(title: String, description: String) {
+    fun setMovieDetails(title: String?, description: String?) {
         movieTitle.set(title)
         movieDescription.set(description)
+    }
+
+    fun setMovieBackdropWithPicasso(context: Context, backdropPath: String?) {
+        bindableFieldTarget = BindableFieldTarget(movieBackdrop, context.resources)
+        Picasso.with(context)
+            .load(IMG_URL + backdropPath)
+            .placeholder(R.drawable.placeholder)
+            .into(bindableFieldTarget)
     }
 }
