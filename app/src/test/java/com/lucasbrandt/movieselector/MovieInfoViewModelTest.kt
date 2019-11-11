@@ -17,7 +17,7 @@ class MovieInfoViewModelTest {
         subject.setMovieInformation(mockMovieDataModel)
         assertEquals(subject.movieTitle.get(), mockMovieDataModel.title)
         assertEquals(subject.movieDescription.get(), mockMovieDataModel.overview)
-        assertEquals(subject.movieRating.get(), mockMovieDataModel.vote_average)
+        assertEquals(subject.movieRating.get(), mockMovieDataModel.vote_average + "/10")
         assertEquals(subject.movieReleaseDate.get(), mockMovieDataModel.release_date)
     }
 }

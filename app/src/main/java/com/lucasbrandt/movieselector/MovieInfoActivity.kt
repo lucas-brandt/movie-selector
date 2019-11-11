@@ -20,5 +20,6 @@ class MovieInfoActivity : AppCompatActivity() {
 
         val movieInformation = Gson().fromJson<MovieDataModel>(intent.getStringExtra("MOVIE_INFORMATION"), MovieDataModel::class.java)
         movieInfoViewModel.setMovieInformation(movieInformation)
+        movieInfoViewModel.setMoviePosterWithPicasso(this, movieInformation?.poster_path)
     }
 }

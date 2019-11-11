@@ -27,7 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.wheelView.setOnWheelItemSelectedListener { parent, itemDrawable, position ->
             val selectedEntry = (parent.adapter as MovieAdapter).getItem(position)
-            mainActivityViewModel.setMovieDetails(selectedEntry.title, selectedEntry.overview)
+            mainActivityViewModel.setMovieDetails(selectedEntry?.title, selectedEntry?.overview)
+            mainActivityViewModel.setMovieBackdropWithPicasso(this, selectedEntry?.backdrop_path)
         }
 
         binding.wheelView.setOnWheelItemClickListener { parent, position, isSelected ->
