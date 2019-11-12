@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                app:wheelColor="@color/colorPrimary"
+                app:wheelColor="@color/lightGray"
                 app:rotatableWheelDrawable="false"
                 app:selectionAngle="90.0"
                 app:repeatItems="true"

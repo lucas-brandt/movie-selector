@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ovalColors">
+        <item>@color/red</item>
+        <item>@color/redOrange</item>
+        <item>@color/orange</item>
+        <item>@color/yellow</item>
+        <item>@color/greenYellow</item>
+        <item>@color/green</item>
+        <item>@color/blueGreen</item>
+        <item>@color/blue</item>
+        <item>@color/indigo</item>
+        <item>@color/violet</item>
+    </array>
+</resources>
