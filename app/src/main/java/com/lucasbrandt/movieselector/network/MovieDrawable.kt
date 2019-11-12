@@ -9,7 +9,6 @@ class MovieDrawable(val text: String) : Drawable() {
     private val paint: Paint = Paint()
 
     init {
-
         paint.color = Color.WHITE
         paint.textSize = 52f
         paint.isAntiAlias = true

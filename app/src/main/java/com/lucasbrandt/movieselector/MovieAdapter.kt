@@ -9,7 +9,7 @@ import com.lucasbrandt.movieselector.network.MovieDataModel
 import com.lucasbrandt.movieselector.network.MovieDrawable
 import com.lukedeighton.wheelview.adapter.WheelArrayAdapter
 
-class MovieAdapter(entries: List<MovieDataModel>, val context: Context) : WheelArrayAdapter<MovieDataModel>(entries) {
+class MovieAdapter(entries: List<MovieDataModel>?, context: Context) : WheelArrayAdapter<MovieDataModel>(entries) {
 
     private val colorArray = context.resources.getIntArray(R.array.ovalColors)
 
