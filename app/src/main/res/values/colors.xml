@@ -4,4 +4,17 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="white">#FFFFFF</color>
+    <color name="lightGray">#D3D3D3</color>
+
+    <!-- Colors for ovals -->
+    <color name="red">#FF0000</color>
+    <color name="redOrange">#F88379</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="greenYellow">#adff2f</color>
+    <color name="green">#00FF00</color>
+    <color name="blueGreen">#0D98BA</color>
+    <color name="blue">#0000FF</color>
+    <color name="indigo">#4B0082</color>
+    <color name="violet">#9400D3</color>
 </resources>
