@@ -10,6 +10,7 @@ import com.google.gson.Gson
 import com.lucasbrandt.movieselector.databinding.ActivityMainBinding
 import com.lucasbrandt.movieselector.network.MovieDataModel
 
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding

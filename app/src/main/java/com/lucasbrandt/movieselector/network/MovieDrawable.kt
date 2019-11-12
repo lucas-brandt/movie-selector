@@ -25,7 +25,7 @@ class MovieDrawable(val text: String) : Drawable() {
             bounds.centerX() - 15f * text.length,
             bounds.centerY() + 15f,
             paint
-        )
+            )
     }
 
     override fun setAlpha(alpha: Int) {
