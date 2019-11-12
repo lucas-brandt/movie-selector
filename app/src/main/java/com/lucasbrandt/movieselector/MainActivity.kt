@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding.viewModel = mainActivityViewModel
 
         mainActivityViewModel.movieLiveList.observe(this, Observer { movies ->
-            val movieList: ArrayList<MovieDataModel>? = movies
-            binding.wheelView.adapter = movieList?.let { MovieAdapter(it, this) }
+            val movieList: List<MovieDataModel>? = movies
+            binding.wheelView.adapter = MovieAdapter(movieList, this)
         })
 
         binding.wheelView.setOnWheelItemSelectedListener { parent, itemDrawable, position ->
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             val selectedEntry = (parent.adapter as MovieAdapter).getItem(position)
             val movieDataModelJson = Gson().toJson(selectedEntry)
             val intent = Intent(baseContext, MovieInfoActivity::class.java)
-            intent.putExtra("MOVIE_INFORMATION", movieDataModelJson)
+            intent.putExtra(INTENT_NAME, movieDataModelJson)
             startActivity(intent)
         }
     }

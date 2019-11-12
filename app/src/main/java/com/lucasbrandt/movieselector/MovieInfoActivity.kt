@@ -10,6 +10,7 @@ import com.lucasbrandt.movieselector.network.MovieDataModel
 
 
 class MovieInfoActivity : AppCompatActivity() {
+
     lateinit var binding: ActivityMovieInfoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,8 @@ class MovieInfoActivity : AppCompatActivity() {
         val movieInfoViewModel = ViewModelProviders.of(this).get(MovieInfoViewModel::class.java)
         binding.viewModel = movieInfoViewModel
 
-        val movieInformation = Gson().fromJson<MovieDataModel>(intent.getStringExtra("MOVIE_INFORMATION"), MovieDataModel::class.java)
+        val movieInformation =
+            Gson().fromJson<MovieDataModel>(intent.getStringExtra(INTENT_NAME), MovieDataModel::class.java)
         movieInfoViewModel.setMovieInformation(movieInformation)
         movieInfoViewModel.setMoviePosterWithPicasso(this, movieInformation?.poster_path)
     }

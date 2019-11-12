@@ -9,6 +9,7 @@ import com.lucasbrandt.movieselector.network.MovieDataModel
 import com.squareup.picasso.Picasso
 
 class MovieInfoViewModel : ViewModel() {
+
     val movieTitle: ObservableField<String> = ObservableField("")
     val movieDescription: ObservableField<String> = ObservableField("")
     val movieRating: ObservableField<String> = ObservableField("")
@@ -29,6 +30,7 @@ class MovieInfoViewModel : ViewModel() {
         Picasso.with(context)
             .load(IMG_URL + posterPath)
             .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
             .into(bindableFieldTarget)
     }
 }

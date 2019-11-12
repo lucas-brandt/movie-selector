@@ -75,4 +75,7 @@ class MainActivityViewModelTest {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    //There are no tests for setMovieBackdropWithPicasso because testing Picasso is redundant
+    //Picasso already has unit tests for Picasso.with() for instance
 }

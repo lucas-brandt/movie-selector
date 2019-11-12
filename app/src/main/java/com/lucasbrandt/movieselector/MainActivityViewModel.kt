@@ -12,13 +12,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivityViewModel : ViewModel() {
+
     private val movieService: MovieService = RetrofitBuilder.createService()
     val movieLiveList: MutableLiveData<ArrayList<MovieDataModel>> = MutableLiveData()
     val movieTitle: ObservableField<String> = ObservableField("")
     val movieDescription: ObservableField<String> = ObservableField("")
     val movieBackdrop: ObservableField<Drawable> = ObservableField()
 
-    lateinit var bindableFieldTarget: BindableFieldTarget
+    private lateinit var bindableFieldTarget: BindableFieldTarget
 
     init {
         getMovieData()
@@ -50,6 +51,7 @@ class MainActivityViewModel : ViewModel() {
         Picasso.with(context)
             .load(IMG_URL + backdropPath)
             .placeholder(R.drawable.placeholder)
+            .error(R.drawable.placeholder)
             .into(bindableFieldTarget)
     }
 }

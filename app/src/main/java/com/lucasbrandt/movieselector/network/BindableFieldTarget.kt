@@ -9,7 +9,7 @@ import com.squareup.picasso.Picasso
 import com.squareup.picasso.Target
 
 
-class BindableFieldTarget(private val observableField: ObservableField<Drawable>, private val resources: Resources) : Target {
+class BindableFieldTarget(val observableField: ObservableField<Drawable>, private val resources: Resources) : Target {
 
     override fun onBitmapLoaded(bitmap: Bitmap, from: Picasso.LoadedFrom) {
         observableField.set(BitmapDrawable(resources, bitmap))
